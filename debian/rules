@@ -36,4 +36,7 @@ binary-arch:
 # We have nothing to do by default.
 
 binary: binary-indep binary-arch
+%:
+	dh $@
+
 .PHONY: clean binary-indep binary-arch binary install
