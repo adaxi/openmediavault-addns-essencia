@@ -25,5 +25,95 @@ OMV.WorkspaceManager.registerNode({
 	text: _("Addns"),
 	icon16: "images/addns.png",
 	iconSvg: "images/addns.svg",
-	position: 5
+	position: 40
 });
+
+//require("js/omv/WorkspaceManager.js")
+//require("js/omv/workspace/form/Panel.js")
+
+/**
+* @class OMV.module.admin.privilege.ldap.Settings
+* @derived OMV.workspace.form.Panel
+*/
+Ext.define("OMV.module.admin.service.addns.Settings", {
+	extend: "OMV.workspace.form.Panel",
+
+	rpcService: "Addns",
+	rpcGetMethod: "getSettings",
+	rpcSetMethod: "setSettings",
+
+	getFormItems: function() {
+		return [{
+			xtype: "fieldset",
+			title: _("General settings"),
+			fieldDefaults: {
+				labelSeparator: ""
+			},
+			items: [{
+				xtype: "checkbox",
+				name: "enable",
+				fieldLabel: _("Enable"),
+				checked: false
+			},{
+				xtype: "textfield",
+				name: "dyndns",
+				fieldLabel: _("DynDNS"),
+				allowBlank: false,
+				vtype: "dyndns",
+				plugins: [{
+					ptype: "fieldinfo",
+					text: _("The hostname or IP address of the DynDNS service.")
+				}]
+			},{
+				xtype: "textfield",
+				name: "record",
+				fieldLabel: _("Record"),
+				allowBlank: false,
+				vtype: "record",
+				plugins: [{
+					ptype: "fieldinfo",
+					text: _("Specifies the domain to be updated.")
+				}]
+			},{
+				xtype: "textfield",
+				name: "username",
+				fieldLabel: _("Username"),
+				allowBlank: false,
+				vtype: "username",
+				plugins: [{
+					ptype: "fieldinfo",
+					text: _("Specifies the username needed to connect to the DynDNS service.")
+				}]
+			},{
+				xtype: "passwordfield",
+				name: "password",
+				fieldLabel: _("Password"),
+				allowBlank: false,
+				plugins: [{
+					ptype: "fieldinfo",
+					text: _("Specifies the password needed to connect to the DynDNS service.")
+				}]
+			},{
+				xtype: "textfield",
+				name: "frequency",
+				fieldLabel: _("Frequency"),
+				allowBlank: false,
+				vtype: "frequency",
+				plugins: [{
+					ptype: "fieldinfo",
+					text: _("Specifies the cron spec at which the service will be run.")
+				}]				
+			}]
+		}];
+	}
+});
+
+
+OMV.WorkspaceManager.registerPanel({
+	id: "settings",
+	path: "/services/addns",
+	text: _("Settings"),
+	position: 10,
+	className: "OMV.module.admin.service.addns.Settings"
+});
+
