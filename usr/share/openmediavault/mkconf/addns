@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# @license   http://www.gnu.org/licenses/gpl.html GPL Version 2
+# @author    Gerik Bonaert <dev@adaxisoft.be>
+# @copyright Copyright (c) 2013 Gerik Bonaert
+#
+# Addns for OpenMediaVault is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# OpenMediaVault is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
+
+# Documentation/Howto:
+# http://wiki.dreamhost.com/index.php/Crontab
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+OMV_ADDNS_ADDNS_CONFIG=${OMV_ADDNS_ADDNS_CONFIG:-"/etc/addns.conf"}
+OMV_ADDNS_DB_LOCATION=${OMV_ADDNS_DB_LOCATION:-"/etc/addns.db"}
+OMV_ADDNS_CRON_CONFIG=${OMV_ADDNS_CRON_CONFIG:-"/etc/cron.d/addns.cron"}
+
+xmlstarlet sel -t -m "//services/addns" \
+  -o "[webcheck]" -n \
+  -o "{" -n \
+  -v "concat('	server_host = ', dyndns)" -n \
+  -v "concat('	update_host = ', record)" -n \
+  -o "	detect_method = \"webcheck\"" -n \
+  -o "	ip_detect_host = \"checkip.dyndns.org\"" -n \
+  -o "	ip_detect_port = 80" -n \
+  -v "concat('	username = \"', username, '\"')" -n \
+  -v "concat('	password = \"', password, '\"')" -n \
+  -o "}" -n \
+  -n \
+  -o "[files]" -n \
+  -o "{" -n \
+  -o "	cache = ${OMV_ADDNS_DB_LOCATION}" -n \
+  -o "}" -n \
+  -b \
+${OMV_CONFIG_FILE} | xmlstarlet unesc > ${OMV_ADDNS_ADDNS_CONFIG}
+chmod 644 ${OMV_ADDNS_ADDNS_CONFIG}
+  
+xmlstarlet sel -t \
+  -o "SHELL=/bin/sh" -n \
+  -o "PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin" -n \
+  -o "# m h dom mon dow user    command" -n \
+  -m "//services/addns[enable='1']" \
+    -o "*/15 * * * * root /usr/bin/addns > /dev/null 2>&1" \
+  -b \  
+${OMV_CONFIG_FILE} | xmlstarlet unesc > ${OMV_ADDNS_CRON_CONFIG}
+chmod 644 ${OMV_ADDNS_CRON_CONFIG}
+
+
+
