@@ -1,3 +1,2 @@
-usr/bin/* usr/bin
+usr/share/openmediavault/* usr/share/openmediavault
 var/www/openmediavault/* var/www/openmediavault
-etc/* etc
