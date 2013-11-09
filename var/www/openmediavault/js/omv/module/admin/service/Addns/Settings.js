@@ -19,14 +19,6 @@
  */
 // require("js/omv/WorkspaceManager.js")
 
-OMV.WorkspaceManager.registerPanel({
-	id: "settings",
-	path: "/services/addns",
-	text: _("Settings"),
-	position: 10,
-	className: "OMV.module.admin.service.addns.Settings"
-});
-
 /**
  * @class OMV.module.admin.privilege.ldap.Settings
  * @derived OMV.workspace.form.Panel
@@ -104,3 +96,11 @@ Ext.define("OMV.module.admin.service.addns.Settings", {
 	}
 });
 
+
+OMV.WorkspaceManager.registerPanel({
+	id: "settings",
+	path: "/services/addns",
+	text: _("Settings"),
+	position: 10,
+	className: "OMV.module.admin.service.addns.Settings"
+});
