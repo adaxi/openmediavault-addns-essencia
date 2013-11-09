@@ -79,15 +79,6 @@ Ext.define("OMV.module.admin.service.addns.Settings", {
 					ptype: "fieldinfo",
 					text: _("Specifies the password needed to connect to the DynDNS service.")
 				}]
-			},{
-				xtype: "textfield",
-				name: "frequency",
-				fieldLabel: _("Frequency"),
-				allowBlank: false,
-				plugins: [{
-					ptype: "fieldinfo",
-					text: _("Specifies the cron spec at which the service will be run.")
-				}]				
 			}]
 		}];
 	}

@@ -41,10 +41,5 @@ msgstr ""
 msgid "Specifies the password needed to connect to the DynDNS service."
 msgstr ""
 
-msgid "Frequency"
-msgstr ""
-
-msgid "Specifies the cron spec at which the service will be run."
-msgstr ""
 
 

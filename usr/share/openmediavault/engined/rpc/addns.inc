@@ -65,8 +65,7 @@ class OMVRpcServiceAddns extends OMVRpcServiceAbstract {
 			"dyndns" => $object['dyndns'],
 			"record" => $object['record'],
 			"username" => $object['username'],
-			"password" => $object['password'],
-			"frequency" => $object['frequency']
+			"password" => $object['password']
 		);
 	}
 
@@ -92,8 +91,7 @@ class OMVRpcServiceAddns extends OMVRpcServiceAbstract {
 				  "dyndns":{"type":"string"},
 				  "record":{"type":"string"},
 				  "username":{"type":"string"},
-				  "password":{"type":"string"},
-				  "frequency":{"type":"string"}
+				  "password":{"type":"string"}
 			  }
 		  }');
 		// Get the existing configuration object.
@@ -109,8 +107,7 @@ class OMVRpcServiceAddns extends OMVRpcServiceAbstract {
 			"dyndns" => $params['dyndns'],
 			"record" => $params['record'],
 			"username" => $params['username'],
-			"password" => $params['password'],
-			"frequency" => $params['frequency'],
+			"password" => $params['password']
 		));
 		if(FALSE === $xmlConfig->replace($xpath, $object)) {
 			throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);

@@ -55,8 +55,7 @@ xmlstarlet sel -t \
   -o "# m h dom mon dow user    command" -n \
   -m "//services/addns[enable='1']" \
     -o "*/15 * * * * root /usr/bin/addns > /dev/null 2>&1" \
-  -b \  
-${OMV_CONFIG_FILE} | xmlstarlet unesc > ${OMV_ADDNS_CRON_CONFIG}
+  -b ${OMV_CONFIG_FILE} | xmlstarlet unesc > ${OMV_ADDNS_CRON_CONFIG}
 chmod 644 ${OMV_ADDNS_CRON_CONFIG}
 
 

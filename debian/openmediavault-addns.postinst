@@ -51,7 +51,6 @@ case "$1" in
 			object="${object}<record></record>"
 			object="${object}<username></username>"
 			object="${object}<password></password>"
-			object="${object}<frequency>*/15 * * * *</frequency>"
 			omv_config_add_element "/config/services" "addns" "${object}" true
 		fi
 
