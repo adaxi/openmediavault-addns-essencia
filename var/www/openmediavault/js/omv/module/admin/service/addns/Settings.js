@@ -105,4 +105,3 @@ OMV.WorkspaceManager.registerPanel({
 	position: 10,
 	className: "OMV.module.admin.service.addns.Settings"
 });
-
