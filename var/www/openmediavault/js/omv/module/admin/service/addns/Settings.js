@@ -48,7 +48,6 @@ Ext.define("OMV.module.admin.service.addns.Settings", {
 				name: "dyndns",
 				fieldLabel: _("DynDNS"),
 				allowBlank: false,
-				vtype: "dyndns",
 				plugins: [{
 					ptype: "fieldinfo",
 					text: _("The hostname or IP address of the DynDNS service.")
@@ -58,7 +57,6 @@ Ext.define("OMV.module.admin.service.addns.Settings", {
 				name: "record",
 				fieldLabel: _("Record"),
 				allowBlank: false,
-				vtype: "record",
 				plugins: [{
 					ptype: "fieldinfo",
 					text: _("Specifies the domain to be updated.")
@@ -68,7 +66,6 @@ Ext.define("OMV.module.admin.service.addns.Settings", {
 				name: "username",
 				fieldLabel: _("Username"),
 				allowBlank: false,
-				vtype: "username",
 				plugins: [{
 					ptype: "fieldinfo",
 					text: _("Specifies the username needed to connect to the DynDNS service.")
@@ -87,7 +84,6 @@ Ext.define("OMV.module.admin.service.addns.Settings", {
 				name: "frequency",
 				fieldLabel: _("Frequency"),
 				allowBlank: false,
-				vtype: "frequency",
 				plugins: [{
 					ptype: "fieldinfo",
 					text: _("Specifies the cron spec at which the service will be run.")
