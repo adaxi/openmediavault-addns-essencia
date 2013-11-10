@@ -5,3 +5,8 @@ Source: http://adaxisoft.be
 Files: *
 Copyright: 2013 Gerik Bonaert <dev@adaxisoft.be>
 License: GPL-2
+
+Files: var/www/openmediavault/images/addns.png
+       var/www/openmediavault/images/addns.svg
+Copyright: ionicons <http://ionicons.com/>
+License: MIT
