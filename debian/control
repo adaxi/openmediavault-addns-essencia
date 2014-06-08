@@ -8,7 +8,7 @@ Homepage: http://adaxisoft.be
 
 Package: openmediavault-addns
 Architecture: all
-Depends: openmediavault (>= 0.5.7), perl
+Depends: openmediavault (>= 0.5.7), perl, addns
 Priority: optional
 Description: OpenMediaVault Addns plugin
  Addns is a DynDNS updater for Unix.

@@ -1,7 +1,10 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Addns for OpenMediaVault is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# any later version.
+# Copyright (c) 2014 Gerik Bonaert
+# This file is distributed under the same license as the openmediavault-addns package.
+# Gérik Bonaert <dev@adaxisoft.be>, 2014.
 #
 #, fuzzy
 msgid ""
@@ -10,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-16 13:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Gérik Bonaert <dev@adaxisoft.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,28 +21,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "DynDNS"
-msgstr ""
+msgstr "DynDNS"
 
-msgid "Nom ou IP du service DynDNS."
-msgstr ""
+msgid "The hostname or IP address of the DynDNS service."
+msgstr "Nom d'hôte ou adresse IP du service DynDNS."
 
-msgid "Domaine"
-msgstr ""
+msgid "Record"
+msgstr "Enregistrement"
 
-msgid "Spécifie le domaine à mettre à jour."
-msgstr ""
+msgid "Specifies the domain to be updated."
+msgstr "Spécifie le domaine à mettre à jour."
 
-msgid "Utilisateur"
-msgstr ""
+msgid "Username"
+msgstr "Nom d'utilisateur"
 
-msgid "Spécifie le nom d'utilisateur necessaire pour se connecter au service DynDNS."
-msgstr ""
+msgid "Specifies the username needed to connect to the DynDNS service."
+msgstr "Spécifie le nom d'utilisateur requis pour mettre à jour à l'enregistrement auprès du service DynDNS."
 
-msgid "Mot de passe"
-msgstr ""
+msgid "Password"
+msgstr "Mot de passe"
 
-msgid "Spécifie le mot passe necessaire pour le connecter au service DynDNS."
-msgstr ""
+msgid "Specifies the password needed to connect to the DynDNS service."
+msgstr "Spécifie le mot de passe requis pour mettre à jour à l'enregistrement auprès du service DynDNS."
 
 
 

@@ -3,7 +3,7 @@
  *
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 2
  * @author    Gerik Bonaert <dev@adaxisoft.be>
- * @copyright Copyright (c) 2013 Gerik Bonaert
+ * @copyright Copyright (c) 2014 Gerik Bonaert
  *
  * Addns for OpenMediaVault is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
  *
  * OpenMediaVault is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -26,6 +26,7 @@ require_once("openmediavault/log.inc");
 
 class OMVModuleAddns extends OMVModuleServiceAbstract
   implements OMVINotifyListener {
+	
 	/**
 	 * Get the module name.
 	 */
