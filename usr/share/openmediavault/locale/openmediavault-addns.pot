@@ -1,7 +1,10 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Addns for OpenMediaVault is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# any later version.
+# Copyright (c) 2014 Gerik Bonaert
+# This file is distributed under the same license as the openmediavault-addns package.
+# Gérik Bonaert <dev@adaxisoft.be>, 2014.
 #
 #, fuzzy
 msgid ""

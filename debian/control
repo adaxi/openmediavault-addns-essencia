@@ -1,4 +1,4 @@
-Source: openmediavault-addns
+Source: openmediavault-addns-essencia
 Section: net
 Priority: optional
 Maintainer: Gerik Bonaert <dev@adaxisoft.be>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>> 7), gettext
 Standards-Version: 3.6.10
 Homepage: http://adaxisoft.be
 
-Package: openmediavault-addns
+Package: openmediavault-addns-essencia
 Architecture: all
 Depends: openmediavault (>= 0.5.7), perl, addns
 Priority: optional
