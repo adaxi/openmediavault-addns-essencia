@@ -18,46 +18,32 @@
  * You should have received a copy of the GNU General Public License
  * along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
  */
-require_once("openmediavault/module.inc");
-require_once("openmediavault/config.inc");
-require_once("openmediavault/error.inc");
-require_once("openmediavault/initscript.inc");
-require_once("openmediavault/log.inc");
-
-class OMVModuleAddns extends OMVModuleServiceAbstract
-  implements OMVINotifyListener {
+class OMVModuleAddns extends OMV\Engine\Module\ServiceAbstract
+	implements \OMV\Engine\Notify\IListener {
 	
 	/**
 	 * Get the module name.
 	 */
 	public function getName() {
-		return "Addns";
+		return "addns";
 	}
 
 	/**
 	 * Generate the configuration.
-	 * @throw E_EXEC_FAILED
 	 */
 	public function applyConfig() {
-		$cmd = "omv-mkconf addns 2>&1";
-		if(0 !== $this->exec($cmd, $output)) {
-			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-			  $cmd, implode("\n", $output));
-		}
+		$cmd = new \OMV\System\Process("omv-mkconf", "addns");
+		$cmd->setRedirect2to1();
+		$cmd->execute();
 	}
 
 	/**
 	 * Bind listeners.
 	 */
-	function bindListeners(OMVNotifyDispatcher $dispatcher) {
+	function bindListeners(\OMV\Engine\Notify\Dispatcher $dispatcher) {
 		$dispatcher->addListener(
 		  OMV_NOTIFY_MODIFY,
-		  "org.openmediavault.services.addns",
-		  array($this, "setDirty"));
+		  "org.openmediavault.conf.service.addns",
+		  [$this, "setDirty"]);
 	}
 }
-
-// Register module.
-$moduleMgr = &OMVModuleMgr::getInstance();
-$moduleMgr->registerModule(new OMVModuleAddns());
-?>

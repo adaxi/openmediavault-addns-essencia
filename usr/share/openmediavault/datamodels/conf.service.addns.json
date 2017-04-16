@@ -1,0 +1,31 @@
+{
+	"type":"config",
+	"id": "conf.service.addns",
+	"title": "Addns",
+	"queryinfo": {
+		"xpath": "//services/addns",
+		"iterable": false
+	},
+	"properties":{
+		"enable": {
+			"type":"boolean",
+			"default": false
+		},
+		"dyndns": {
+			"type":"string",
+			"default": ""
+		},
+		"record": {
+			"type":"string",
+			"default": ""
+		},
+		"username": {
+			"type":"string",
+			"default": ""
+		},
+		"password": {
+			"type":"string",
+			"default": ""
+		}
+	}
+}

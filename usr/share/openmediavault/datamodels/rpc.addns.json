@@ -1,0 +1,24 @@
+[{
+	"type": "rpc",
+	"id": "rpc.addns.set",
+	"params": {
+		"type":"object",
+		"properties":{
+		        "enable": {
+				"type":"boolean"
+			},
+		        "dyndns": {
+				"type":"string"
+			},
+		        "record":{
+				"type":"string"
+			},
+		        "username": {
+				"type":"string"
+			},
+		        "password": {
+				"type":"string"
+			}
+		}
+	} 
+}]
